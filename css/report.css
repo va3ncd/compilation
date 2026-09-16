@@ -1,0 +1,444 @@
+/* ============================================================
+   ACCIDENT REPORT
+   Base stylesheet — deliberately self-contained.
+   No external fonts, libraries or network resources.
+   ============================================================ */
+
+:root {
+    --ink: #18202a;
+    --muted: #65707c;
+    --line: #d9dee4;
+    --paper: #ffffff;
+    --surface: #f4f6f8;
+    --accent: #263b52;
+    --accent-light: #e9eef3;
+    --max-width: 1080px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #dfe3e7;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------
+   COVER
+   ------------------------------------------------------------ */
+
+.cover-page {
+    min-height: 100vh;
+    padding: 70px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e7eaed;
+}
+
+.cover-content {
+    width: min(100%, 900px);
+    min-height: 760px;
+    padding: 90px 100px 55px;
+    background: var(--paper);
+    box-shadow: 0 18px 50px rgba(20, 30, 40, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.document-label,
+.part-label {
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.cover-content h1 {
+    margin: 38px 0 10px;
+    font-size: clamp(2.5rem, 6vw, 4.7rem);
+    line-height: 1.03;
+    font-weight: 600;
+    letter-spacing: -0.045em;
+}
+
+.cover-content h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 2vw, 1.65rem);
+    line-height: 1.35;
+    font-weight: 400;
+    color: #4c5661;
+}
+
+.cover-rule {
+    width: 90px;
+    height: 3px;
+    margin: 35px 0 28px;
+    background: var(--accent);
+}
+
+.cover-description {
+    max-width: 690px;
+    margin: 0 0 42px;
+    font-size: 1.08rem;
+    color: #46515c;
+}
+
+.case-meta {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 45px;
+}
+
+.case-meta div {
+    border-top: 1px solid var(--line);
+    padding-top: 11px;
+}
+
+.case-meta dt {
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.case-meta dd {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.document-status {
+    margin: auto 0 24px;
+    padding: 14px 17px;
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    color: #505a65;
+    font-size: 0.87rem;
+}
+
+.document-status span {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+}
+
+.begin-button {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    padding: 14px 20px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    transition: transform 150ms ease, background 150ms ease;
+}
+
+.begin-button:hover {
+    background: #182a3c;
+    transform: translateX(3px);
+}
+
+.begin-button span {
+    font-size: 1.1rem;
+}
+
+.offline-note {
+    margin: 18px 0 0;
+    font-size: 0.73rem;
+    color: #7a838d;
+}
+
+
+/* ------------------------------------------------------------
+   DOCUMENT GUIDE
+   ------------------------------------------------------------ */
+
+.guide-page {
+    width: min(100%, 1080px);
+    margin: 45px auto;
+    padding: 55px 65px 35px;
+    background: var(--paper);
+    box-shadow: 0 18px 50px rgba(20, 30, 40, 0.10);
+}
+
+.guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--line);
+}
+
+.guide-header h2 {
+    margin: 7px 0 0;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+.top-link {
+    padding: 7px 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.top-link:hover {
+    color: var(--ink);
+}
+
+.guide-intro {
+    max-width: 750px;
+    margin: 28px 0;
+    color: #505b66;
+}
+
+.navigation-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 52px;
+}
+
+.nav-card {
+    display: grid;
+    grid-template-columns: 45px 1fr 25px;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    transition: border-color 150ms ease, background 150ms ease;
+}
+
+.nav-card:hover {
+    border-color: #aeb8c2;
+    background: var(--surface);
+}
+
+.nav-card.primary {
+    border-color: var(--accent);
+}
+
+.nav-card-number {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.nav-card strong {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+}
+
+.nav-card small {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-arrow {
+    font-size: 1.2rem;
+    color: var(--muted);
+}
+
+.document-map {
+    display: grid;
+    gap: 44px;
+}
+
+.part {
+    border-top: 2px solid var(--accent);
+    padding-top: 17px;
+}
+
+.part h3 {
+    margin: 3px 0 14px;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.section-link {
+    display: grid;
+    grid-template-columns: 48px 1fr 25px;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 10px;
+    border-top: 1px solid var(--line);
+    transition: background 150ms ease;
+}
+
+.section-link:hover {
+    background: var(--surface);
+}
+
+.section-number {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.section-title strong {
+    display: block;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+
+.section-title small {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.section-arrow {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.quick-reference {
+    margin-top: 58px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.quick-reference h3 {
+    margin: 4px 0 7px;
+    font-size: 1.35rem;
+}
+
+.quick-reference p {
+    margin: 0 0 20px;
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.evidence-grid div {
+    min-height: 70px;
+    padding: 12px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.evidence-grid strong {
+    display: block;
+    font-size: 0.73rem;
+    letter-spacing: 0.03em;
+}
+
+.evidence-grid span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 0.73rem;
+}
+
+.guide-footer {
+    margin-top: 50px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    color: #858d96;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+    .cover-page {
+        padding: 0;
+    }
+
+    .cover-content {
+        min-height: 100vh;
+        padding: 55px 28px 35px;
+        box-shadow: none;
+    }
+
+    .case-meta,
+    .navigation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-page {
+        margin: 0;
+        padding: 35px 25px 30px;
+        box-shadow: none;
+    }
+
+    .evidence-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ------------------------------------------------------------
+   PRINT
+   ------------------------------------------------------------ */
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .cover-page,
+    .guide-page {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .cover-page {
+        min-height: 100vh;
+        page-break-after: always;
+    }
+
+    .guide-page {
+        page-break-before: always;
+    }
+
+    .begin-button,
+    .top-link {
+        display: none;
+    }
+}
