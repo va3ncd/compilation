@@ -59,6 +59,17 @@ a {
     flex-direction: column;
 }
 
+.cover-intro ul {
+    margin: 1.2em 0 1.4em 1.5em;
+    padding-left: 1.2em;
+}
+
+.cover-intro li {
+    margin-bottom: 0.45em;
+    padding-left: 0.3em;
+    line-height: 1.45;
+}
+
 .document-label,
 .part-label {
     font-size: 0.73rem;
